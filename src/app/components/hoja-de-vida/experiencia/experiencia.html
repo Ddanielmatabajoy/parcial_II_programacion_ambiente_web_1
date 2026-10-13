@@ -1,0 +1,15 @@
+<section class="card shadow-sm mb-4">
+  <div class="card-header fw-bold">Experiencia y proyectos</div>
+  <div class="card-body">
+    @for (x of experiencias; track x.cargo) {
+      <div class="mb-3">
+        <h3 class="h6 mb-0">{{ x.cargo }}</h3>
+        <small class="text-muted">{{ x.lugar }} · {{ x.periodo }}</small>
+        <p class="mb-1">{{ x.descripcion }}</p>
+        @for (t of x.tecnologias; track t) {
+          <span class="badge bg-primary me-1">{{ t }}</span>
+        }
+      </div>
+    }
+  </div>
+</section>

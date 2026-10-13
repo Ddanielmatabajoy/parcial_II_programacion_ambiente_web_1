@@ -1,0 +1,11 @@
+<section class="card shadow-sm mb-4">
+  <div class="card-header fw-bold">Contacto</div>
+  <ul class="list-group list-group-flush">
+    @for (c of contactos; track c.etiqueta) {
+      <li class="list-group-item">
+        <span class="me-2">{{ c.icono }}</span>
+        <strong>{{ c.etiqueta }}:</strong> {{ c.valor }}
+      </li>
+    }
+  </ul>
+</section>
