@@ -1,0 +1,13 @@
+<div class="mb-4 d-flex flex-wrap gap-2">
+  @for (g of generos(); track g) {
+    <button
+      type="button"
+      class="btn btn-sm"
+      [class.btn-primary]="activo() === g"
+      [class.btn-outline-primary]="activo() !== g"
+      (click)="seleccionado.emit(g)"
+    >
+      {{ g }}
+    </button>
+  }
+</div>

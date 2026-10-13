@@ -1,0 +1,16 @@
+<div class="card h-100 shadow-sm">
+  <div class="card-body">
+    <div class="d-flex justify-content-between mb-2">
+      <span class="badge bg-info text-dark">{{ juego().genero }}</span>
+      @if (juego().destacado) {
+        <span class="badge bg-warning text-dark">⭐ Destacado</span>
+      }
+    </div>
+    <h2 class="h5">{{ juego().titulo }}</h2>
+    <p class="card-text">{{ juego().descripcion }}</p>
+  </div>
+  <div class="card-footer d-flex justify-content-between small text-muted">
+    <span>{{ juego().plataforma }} · {{ juego().anio }}</span>
+    <strong>{{ juego().calificacion }}/10</strong>
+  </div>
+</div>

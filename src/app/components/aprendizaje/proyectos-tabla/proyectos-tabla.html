@@ -1,0 +1,39 @@
+<div class="table-responsive">
+  <table class="table table-striped align-middle">
+    <thead class="table-dark">
+      <tr>
+        <th>#</th>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Tecnologías</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (p of proyectos(); track p.id; let i = $index) {
+        <tr>
+          <td>{{ i + 1 }}</td>
+          <td>
+            <strong>{{ p.nombre }}</strong><br />
+            <small class="text-muted">{{ p.descripcion }}</small>
+          </td>
+          <td>{{ p.tipo }}</td>
+          <td>
+            @for (t of p.tecnologias; track t) {
+              <span class="badge bg-secondary me-1">{{ t }}</span>
+            }
+          </td>
+          <td>
+            @if (p.estado === 'Completado') {
+              <span class="badge bg-success">Completado</span>
+            } @else {
+              <span class="badge bg-warning text-dark">En progreso</span>
+            }
+          </td>
+        </tr>
+      } @empty {
+        <tr><td colspan="5" class="text-center">Sin proyectos.</td></tr>
+      }
+    </tbody>
+  </table>
+</div>

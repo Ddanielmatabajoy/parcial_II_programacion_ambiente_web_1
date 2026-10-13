@@ -1,0 +1,21 @@
+<div class="card h-100 shadow-sm">
+  <div class="card-body">
+    <div class="d-flex justify-content-between align-items-start">
+      <span class="fs-2">{{ tema().icono }}</span>
+      <span class="badge bg-dark">{{ tema().categoria }}</span>
+    </div>
+    <h3 class="h5 mt-2">{{ tema().titulo }}</h3>
+    <p class="card-text">{{ tema().descripcion }}</p>
+
+    <h4 class="h6 text-muted">Conocimientos</h4>
+    <ul class="mb-3">
+      @for (c of tema().conocimientos; track c) {
+        <li>{{ c }}</li>
+      }
+    </ul>
+
+    @for (tec of tema().tecnologias; track tec) {
+      <span class="badge bg-primary me-1">{{ tec }}</span>
+    }
+  </div>
+</div>

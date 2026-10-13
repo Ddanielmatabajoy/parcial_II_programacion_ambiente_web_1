@@ -1,1 +1,18 @@
-<p>tema-libre works!</p>
+<h1 class="h2 mb-1">Mis videojuegos favoritos</h1>
+<p class="text-muted mb-4">Filtra por género para ver los juegos de cada categoría.</p>
+
+<app-filtro-generos
+  [generos]="generos"
+  [activo]="generoActivo()"
+  (seleccionado)="seleccionarGenero($event)"
+/>
+
+<div class="row g-3">
+  @for (juego of juegosFiltrados(); track juego.id) {
+    <div class="col-md-6 col-lg-4">
+      <app-juego-card [juego]="juego" />
+    </div>
+  } @empty {
+    <p class="text-muted">No hay juegos en esta categoría.</p>
+  }
+</div>
